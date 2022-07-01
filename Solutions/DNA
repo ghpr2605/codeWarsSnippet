@@ -6,3 +6,34 @@ Example: (input --> output)
 
 "ATTGC" --> "TAACG"
 "GTAT" --> "CATA"
+
+/////////////////////////////////////////
+Solution
+/////////////////////////////////////////
+
+
+function DNAStrand(dna){
+  let DNAString = dna.split('');
+  for(let i=0; i<DNAString.length; i++) {
+    if(DNAString[i] === 'A') {
+      DNAString[i] = 'T';
+      continue;
+    }
+    
+    if(DNAString[i] === 'C') {
+      DNAString[i] = 'G';
+      continue;
+    }
+    
+    if(DNAString[i] === 'T') {
+      DNAString[i] = 'A';
+      continue;
+    }
+    
+    if(DNAString[i] === 'G') {
+      DNAString[i] = 'C';
+      continue;
+    }
+  }
+  return DNAString.join('');
+}
