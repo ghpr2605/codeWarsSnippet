@@ -3,3 +3,17 @@ A common way to deal with this situation is to remove all of the vowels from the
 Your task is to write a function that takes a string and return a new string with all vowels removed.
 
 For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+
+/////////////////////////////////////////
+Solution
+/////////////////////////////////////////
+
+const disemvowel = str => {
+  let result = '';
+  let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+  let chars = str.split('');
+  for(let i=0; i<chars.length; i++) {
+    result = vowels.includes(chars[i]) ? result : result + chars[i];
+  }
+  return result;
+}
