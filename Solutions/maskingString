@@ -14,3 +14,17 @@ Examples
 "Nananananananananananananananana Batman!"
 -->
 "####################################man!"
+
+/////////////////////////////////////////
+Solution
+/////////////////////////////////////////
+
+
+const maskify = cc => {
+  if(cc.length > 4) {
+      let unmaskedString = cc.slice(cc.length-4);
+      let maskedString = cc.slice(0,cc.length-4).replace(/./g, '#');
+      return `${maskedString}${unmaskedString}`;
+  }
+  return cc;
+}
