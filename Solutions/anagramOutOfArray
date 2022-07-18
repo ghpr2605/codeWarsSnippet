@@ -9,3 +9,14 @@ You should return an array of all the anagrams or an empty array if there are no
 anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']) => ['aabb', 'bbaa']
 anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']) => ['carer', 'racer']
 anagrams('laser', ['lazing', 'lazy',  'lacer']) => []
+
+
+/////////////////////////////////////////
+Solution
+/////////////////////////////////////////
+
+const anagrams = (word, words) => {
+  return results = words.filter(str => {
+    return word.split('').sort().join('') === str.split('').sort().join('')
+  });
+}
