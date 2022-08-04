@@ -1,0 +1,24 @@
+input : "Welcome to Javascript Program"
+output : "Program Javascript to Welcome"
+
+/////////////////////////////////////////
+Solution
+/////////////////////////////////////////
+
+let input = "Welcome to Javascript Program";
+let result = [];
+let revStr = "";
+const reverse = (str) => {
+  for (let i = 0; i <= str.length; i++) {
+    if (str[i] === ' ' || i === str.length) {
+      result.unshift(revStr);
+      revStr = '';
+    } else {
+      revStr += str[i];
+    }
+  }
+  return result.join(' ');
+};
+
+console.log(reverse(input));
+
