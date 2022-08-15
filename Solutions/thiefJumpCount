@@ -10,3 +10,33 @@ Input : heights = [11, 11]
 Output : 4
 He needs to make 2 jumps for first wall
 and 2 jumps for second wall.
+
+/////////////////////////////////////////
+Solution
+/////////////////////////////////////////
+
+let wallsHt = [11, 10, 10, 9];
+let maxHt = 10;
+let slip = 1;
+
+function countJump(wallsHt, maxHt, slip) {
+  let jump = 0;
+  for (let i = 0; i < wallsHt.length; i++) {
+    if (wallsHt[i] <= maxHt) {
+      jump++;
+      continue;
+    }
+
+    let ht = wallsHt[i];
+
+    while (ht > maxHt) {
+      jump++;
+      ht = ht - (maxHt - slip);
+    }
+    jump++;
+  }
+  return jump;
+}
+
+let jumps = countJump(wallsHt, maxHt, slip);
+console.log(jumps);
